@@ -1,8 +1,7 @@
 package org.example;
 
 /**
- * @author : Kane
- * @description: TODO
+ * @description: 线程
  * @date : 2023-01-31
  */
 

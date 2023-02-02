@@ -7,8 +7,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author : Kane
- * @description: TODO
+ * @description: 队列
  * @date : 2023-02-01
  */
 

@@ -1,8 +1,7 @@
 package org.example;
 
 /**
- * @author : Kane
- * @description: TODO
+ * @description: volatile
  * @date : 2023-01-31
  */
 
