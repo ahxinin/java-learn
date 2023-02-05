@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * @description: 线程
  * @date : 2023-01-31
@@ -34,8 +37,21 @@ public class ThreadTest {
         return count;
     }
 
+    public static void poolTest(){
+        ExecutorService pool = Executors.newSingleThreadExecutor();
+        pool.submit(() -> {
+            try {
+                String qq=pool.submit(()->"QQ").get();
+                System.out.println(qq);
+            } catch (Exception e) {
+            }
+        });
+    }
+
     public static void main(String[] args) throws InterruptedException {
         long result = calc();
         System.out.println("result:"+result);
+        poolTest();
     }
+
 }

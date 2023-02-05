@@ -16,6 +16,8 @@ public class Dubbo {
     private final Lock lock = new ReentrantLock();
     private final Condition done = lock.newCondition();
 
+    Object response;
+
     // 调用方通过该方法等待结果
     Object get(int timeout) throws TimeoutException, InterruptedException {
         long start = System.nanoTime();
@@ -34,7 +36,7 @@ public class Dubbo {
         if (!isDone()) {
             throw new TimeoutException();
         }
-        return returnFromResponse();
+        return null;
     }
 
     // RPC结果是否已经返回
@@ -43,7 +45,7 @@ public class Dubbo {
     }
 
     // RPC结果返回时调用该方法
-    private void doReceived(Response res) {
+    private void doReceived(Object res) {
         lock.lock();
         try {
             response = res;
